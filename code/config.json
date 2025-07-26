@@ -12,7 +12,7 @@
         "alpha": 0.5,
         "radius": 10,
         "method": "circle",
-        "AGE_mode": "strategy_1",
+        "AGE_mode": "strategy_4",
         "move_to_origin": true
     },
     "eos_token_id": 151645,
