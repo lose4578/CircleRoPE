@@ -43,7 +43,7 @@ def get_circle_rope_index(w_index, h_index, t_index, config):
                                                      alpha=-1,
                                                      method='no_circle')
         # Linearly interpolate between circle projection and original coordinates
-        convert_coords = dff_rate * convert_coords + (1 - dff_rate) * no_circle_convert_coords
+        convert_coords = (1 - dff_rate) * convert_coords + dff_rate * no_circle_convert_coords
 
     # Move coordinates to positive axis if specified
     if move_to_positive:
@@ -210,4 +210,5 @@ def map_to_circle(tensor, radius=1.0, alpha=0.5):
 
     # Combine the three channels and maintain the shape as (3, 1, H, W)
     new_tensor = torch.stack([new_x, new_y, z], dim=0).unsqueeze(1)
+
     return new_tensor
